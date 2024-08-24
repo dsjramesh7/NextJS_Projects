@@ -41,6 +41,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json(card);
   } catch (error) {
+    console.log(error);
+
     return NextResponse.json(
       { error: "Internal Server Error!" },
       {
@@ -85,7 +87,7 @@ export async function PUT(request: Request) {
 export async function DELETE(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get("id");
+    const id = searchParams.get("id");  
 
     if (await prisma.card.findFirst({ where: { id: Number(id) } })) {
       const card = await prisma.card.delete({

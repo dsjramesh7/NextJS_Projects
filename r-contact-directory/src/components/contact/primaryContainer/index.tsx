@@ -1,5 +1,5 @@
 import React from "react";
-// import AddNewContact from "../addNewContact";
+import AddNewContact from "../addNewContact";
 
 const PrimaryContainer = () => {
   return (
@@ -11,7 +11,7 @@ const PrimaryContainer = () => {
         </p>
       </div>
 
-      {/* <AddNewContact /> */}
+      <AddNewContact />
     </div>
   );
 };
